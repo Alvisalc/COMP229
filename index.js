@@ -12,6 +12,11 @@ const morgan = require('morgan');
 
 //App Init
 const app = express();
+//Morgan
+app.use(morgan('tiny'))
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(require('./routes/index.routes'))
 
 //First Route
 
