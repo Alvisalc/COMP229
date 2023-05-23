@@ -1,5 +1,6 @@
-const {post} = require("./index.routes");
+const post = require("../models/post.model");
 const router = require("./index.routes");
+module.exports = router;
 
 router.get('/', async (req, res)=>{
     await post.getPosts()

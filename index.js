@@ -19,7 +19,6 @@ app.use(express.urlencoded({extended:true}))
 app.use(require('./routes/index.routes'))
 
 //First Route
-
 app.get('/',(req,res)=>{
     res.json({message: "Welcome to the class"})
 });

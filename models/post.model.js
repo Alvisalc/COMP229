@@ -1,11 +1,11 @@
 //Imports
-const helper = require('../helper.js');
-
+const helper = require('../helpers/helper.js');
+// const { writeJSONFile, getNewId, newDate } = require('../helpers/helper.js');
 //Variables
 const filename = '../data/post.json';
 
 //Array
-let posts = require(filenmae);
+let posts = require(filename);
 
 //Read
 const getPosts = ()=>{
@@ -31,7 +31,7 @@ const getPost = (id)=>{
     //one particular post
     //index of the element by traversing through the array
     //Similar code logic array.find(r.id ==id)
-    return Promise((resolve,reject)=>{
+    return new Promise((resolve,reject)=>{
         helper.mustBeInArray(posts, id)
         .then(post => resolve(post))
         .catch(err => reject(err))
@@ -90,4 +90,10 @@ const deletePost = (id)=>{
     })
 }
 
-//test
+module.exports = {
+    insertPost,
+    getPost,
+    getPosts,
+    updatePost,
+    deletePost
+}
