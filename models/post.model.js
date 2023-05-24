@@ -80,7 +80,7 @@ const updatePost = (id, newPost)=>{
 
 const deletePost = (id)=>{
     return new Promise((resolve, reject)=>{
-        helper.mustBeInArray(post, id)
+        helper.mustBeInArray(posts, id)
         .then(()=>{
             posts = posts.filter(p=>p.id !== id)
             helper.writeJSONFile(filename, posts)
